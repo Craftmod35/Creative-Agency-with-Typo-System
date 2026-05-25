@@ -1,0 +1,39 @@
+@use "sass:map";
+@use "maps" as *;
+
+@mixin respond-to($name) {
+  $size: map.get($breakpoints, $name);
+
+  @if $size != null {
+    @media (min-wdith: $size) {
+      @content;
+    }
+  }
+}
+
+@mixin flex($justify: center, $align: center, $flow: null) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  @if $flow !=null {
+    flex-flow: $flow;
+  }
+}
+
+@mixin typo($name, $variant: regular) {
+  $one-typo: map.get($typo, $name);
+
+  font-size: map.get($one-typo, fs);
+  line-height: map.get($one-typo, lh);
+  letter-spacing: map.get($one-typo, ls);
+
+  @if $variant == bold {
+    font-weight: map.get($one-typo, fw-bold);
+  } @else {
+    font-weight: map.get($one-typo, fw);
+  }
+
+  @if not map.has-key($typo, $name) {
+    @warn "No typography named `#{$name}` found in $typo map.";
+  }
+}

@@ -1,0 +1,41 @@
+@use "../abstract/index" as *;
+@use "sass:map";
+
+// @for $i from 1 through 7 {
+//   .py-#{$i} {
+//     padding-block: #{$i}rem !important;
+//   }
+//   .my-#{$i} {
+//     margin-block: #{$i}rem !important;
+//   }
+//   .px-#{$i} {
+//     padding-inline: #{$i}rem !important;
+//   }
+//   .mx-#{$i} {
+//     margin-inline: #{$i}rem !important;
+//   }
+// }
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+@each $size, $value in $scales {
+  @each $abbre, $dire in $directions {
+    @if $dire == "" {
+      .p-#{$size} {
+        padding: $value * 1em !important;
+      }
+      .m-#{$size} {
+        margin: $value * 1em !important;
+      }
+    } @else {
+      .p#{$abbre}-#{$size} {
+        padding-#{$dire}: $value * 1em !important;
+      }
+      .m#{$abbre}-#{$size} {
+        padding-#{$dire}: $value * 1em !important;
+      }
+    }
+  }
+}

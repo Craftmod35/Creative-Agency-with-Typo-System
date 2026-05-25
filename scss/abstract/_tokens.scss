@@ -1,0 +1,112 @@
+@use "variables" as *;
+@use "functions" as *;
+@use "sass:math";
+
+// Scales
+
+$scale: 1.618;
+
+$step: $scale;
+
+$h-step: math.pow($scale, 0.5);
+$q-step: math.pow($scale, 0.25);
+$e-step: math.pow($scale, 0.125);
+
+$raw-size-m: 1;
+
+$raw-size-s: math.div($raw-size-m, $scale);
+$raw-size-xs: math.div($raw-size-s, $scale);
+$raw-size-2xs: math.div($raw-size-xs, $scale);
+$raw-size-l: $raw-size-m * $scale;
+$raw-size-xl: $raw-size-l * $scale;
+$raw-size-2xl: $raw-size-xl * $scale;
+
+$size-2xs: r($raw-size-2xs);
+$size-xs: r($raw-size-xs);
+$size-s: r($raw-size-s);
+$size-m: r($raw-size-m);
+$size-l: r($raw-size-l);
+$size-xl: r($raw-size-xl);
+$size-2xl: r($raw-size-2xl);
+
+// Typography Scales
+$raw-display1-fs: math.pow($step, 3);
+$raw-display2-fs: math.pow($step, 2);
+$raw-title1-fs: $step * $h-step;
+$raw-title2-fs: $step;
+$raw-title3-fs: $h-step;
+$raw-heading-fs: $q-step;
+$raw-body-fs: 1;
+$raw-callout-fs: math.div(1, $e-step);
+$raw-subheading-fs: math.div(1, $q-step);
+$raw-label-fs: math.div(math.div(1, $q-step), $e-step);
+$raw-caption-fs: math.div(1, $h-step);
+$raw-capline-fs: math.div(1, $h-step);
+
+$display1-fs: r($raw-display1-fs) * 1rem;
+$display2-fs: r($raw-display2-fs) * 1rem;
+$title1-fs: r($raw-title1-fs) * 1rem;
+$title2-fs: r($raw-title2-fs) * 1rem;
+$title3-fs: r($raw-title3-fs) * 1rem;
+$heading-fs: r($raw-heading-fs) * 1rem;
+$subheading-fs: r($raw-subheading-fs) * 1rem;
+$body-fs: r($raw-body-fs) * 1rem;
+$callout-fs: r($raw-callout-fs) * 1rem;
+$label-fs: r($raw-label-fs) * 1rem;
+$caption-fs: r($raw-caption-fs) * 1rem;
+$capline-fs: r($raw-capline-fs) * 1rem;
+
+// Line Heights
+$display1-lh: 1.05;
+$display2-lh: 1.1;
+$title1-lh: 1.15;
+$title2-lh: 1.2;
+$title3-lh: 1.25;
+$heading-lh: 1.3;
+$subheading-lh: 1.35;
+$body-lh: 1.55;
+$callout-lh: 1.4;
+$label-lh: 1.4;
+$caption-lh: 1.4;
+$capline-lh: 1.4;
+
+// Letter Spacing
+$display1-ls: -0.022em;
+$display2-ls: -0.022em;
+$title1-ls: -0.022em;
+$title2-ls: -0.02em;
+$title3-ls: -0.017em;
+$heading-ls: -0.014em;
+$subheading-ls: -0.007em;
+$body-ls: -0.011em;
+$callout-ls: -0.009em;
+$label-ls: -0.004em;
+$caption-ls: -0.007em;
+$capline-ls: 0.0618em;
+
+// Weights
+$display1-w: 400;
+$display2-w: 400;
+$title1-w: 400;
+$title2-w: 400;
+$title3-w: 400;
+$heading-w: 600;
+$subheading-w: 400;
+$body-w: 400;
+$callout-w: 400;
+$label-w: 500;
+$caption-w: 400;
+$capline-w: 400;
+
+$display1-b: 700;
+$display2-b: 700;
+$title1-b: 700;
+$title2-b: 600;
+$title3-b: 600;
+$heading-b: 700;
+$subheading-b: 600;
+$body-b: 600;
+$callout-b: 600;
+$label-b: 700;
+$caption-b: 600;
+$capline-b: 600;

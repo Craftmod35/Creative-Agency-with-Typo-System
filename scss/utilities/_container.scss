@@ -1,0 +1,17 @@
+@use "../abstract/index" as *;
+.container {
+  width: 95%;
+  max-width: 1400px;
+  margin-inline: auto;
+
+  @include respond-to(tablet) {
+    width: 90%;
+  }
+  @include respond-to(laptop) {
+    width: 85%;
+  }
+  @include respond-to(laptop-l) {
+    width: 80%;
+    max-width: 1500px;
+  }
+}

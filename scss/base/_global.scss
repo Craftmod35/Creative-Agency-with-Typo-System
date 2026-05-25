@@ -1,0 +1,12 @@
+@use "../abstract/index" as *;
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  // font-size: 62.5%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
