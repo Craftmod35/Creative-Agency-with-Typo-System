@@ -23,7 +23,7 @@
 @mixin typo($name, $variant: regular) {
   $one-typo: map.get($typo, $name);
 
-  font-size: map.get($one-typo, fs);
+  font-size: var(--#{$name}-fs);
   line-height: map.get($one-typo, lh);
   letter-spacing: map.get($one-typo, ls);
 

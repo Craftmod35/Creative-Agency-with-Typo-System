@@ -43,18 +43,31 @@ $raw-label-fs: math.div(math.div(1, $q-step), $e-step);
 $raw-caption-fs: math.div(1, $h-step);
 $raw-capline-fs: math.div(1, $h-step);
 
-$display1-fs: r($raw-display1-fs) * 1rem;
-$display2-fs: r($raw-display2-fs) * 1rem;
-$title1-fs: r($raw-title1-fs) * 1rem;
-$title2-fs: r($raw-title2-fs) * 1rem;
-$title3-fs: r($raw-title3-fs) * 1rem;
-$heading-fs: r($raw-heading-fs) * 1rem;
-$subheading-fs: r($raw-subheading-fs) * 1rem;
-$body-fs: r($raw-body-fs) * 1rem;
-$callout-fs: r($raw-callout-fs) * 1rem;
-$label-fs: r($raw-label-fs) * 1rem;
-$caption-fs: r($raw-caption-fs) * 1rem;
-$capline-fs: r($raw-capline-fs) * 1rem;
+$display1-fs: fluid($raw-display1-fs, 0.7, 4);
+$display2-fs: fluid($raw-display2-fs, 0.75, 3);
+$title1-fs: fluid($raw-title1-fs, 0.8, 2);
+$title2-fs: fluid($raw-title2-fs, 0.85, 1.5);
+$title3-fs: fluid($raw-title3-fs, 0.9, 1);
+$heading-fs: fluid($raw-heading-fs, 0.95, 0.6);
+$subheading-fs: fluid($raw-subheading-fs, 0.95, 0.5);
+$body-fs: fluid($raw-body-fs, 1, 0.3);
+$callout-fs: fluid($raw-callout-fs, 0.95, 0.35);
+$label-fs: fluid($raw-label-fs, 1, 0.2);
+$caption-fs: fluid($raw-caption-fs, 1, 0.15);
+$capline-fs: fluid($raw-capline-fs, 1, 0.1);
+
+// $display1-fs: r($raw-display1-fs) * 1rem;
+// $display2-fs: r($raw-display2-fs) * 1rem;
+// $title1-fs: r($raw-title1-fs) * 1rem;
+// $title2-fs: r($raw-title2-fs) * 1rem;
+// $title3-fs: r($raw-title3-fs) * 1rem;
+// $heading-fs: r($raw-heading-fs) * 1rem;
+// $subheading-fs: r($raw-subheading-fs) * 1rem;
+// $body-fs: r($raw-body-fs) * 1rem;
+// $callout-fs: r($raw-callout-fs) * 1rem;
+// $label-fs: r($raw-label-fs) * 1rem;
+// $caption-fs: r($raw-caption-fs) * 1rem;
+// $capline-fs: r($raw-capline-fs) * 1rem;
 
 // Line Heights
 $display1-lh: 1.05;

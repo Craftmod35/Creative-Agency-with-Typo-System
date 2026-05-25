@@ -1,0 +1,16 @@
+@use "../abstract/index" as *;
+
+:root {
+  --display1-fs: #{$display1-fs};
+  --display2-fs: #{$display2-fs};
+  --title1-fs: #{$title1-fs};
+  --title2-fs: #{$title2-fs};
+  --title3-fs: #{$title3-fs};
+  --heading-fs: #{$heading-fs};
+  --subheading-fs: #{$subheading-fs};
+  --body-fs: #{$body-fs};
+  --callout-fs: #{$callout-fs};
+  --label-fs: #{$label-fs};
+  --caption-fs: #{$caption-fs};
+  --capline-fs: #{$capline-fs};
+}

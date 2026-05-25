@@ -58,6 +58,21 @@ section {
   padding-block: 4rem;
 }
 
+:root {
+  --display1-fs: clamp(2.965rem, 4vw + 0.89rem, 4.236rem);
+  --display2-fs: clamp(1.963rem, 3vw + 0.589rem, 2.618rem);
+  --title1-fs: clamp(1.646rem, 2vw + 0.494rem, 2.058rem);
+  --title2-fs: clamp(1.375rem, 1.5vw + 0.413rem, 1.618rem);
+  --title3-fs: clamp(1.145rem, 1vw + 0.344rem, 1.272rem);
+  --heading-fs: clamp(1.071rem, 0.6vw + 0.321rem, 1.128rem);
+  --subheading-fs: clamp(0.842rem, 0.5vw + 0.253rem, 0.887rem);
+  --body-fs: clamp(1rem, 0.3vw + 0.3rem, 1rem);
+  --callout-fs: clamp(0.895rem, 0.35vw + 0.269rem, 0.942rem);
+  --label-fs: clamp(0.835rem, 0.2vw + 0.251rem, 0.835rem);
+  --caption-fs: clamp(0.786rem, 0.15vw + 0.236rem, 0.786rem);
+  --capline-fs: clamp(0.786rem, 0.1vw + 0.236rem, 0.786rem);
+}
+
 .container {
   width: 95%;
   max-width: 1400px;

@@ -4,3 +4,22 @@
 @function r($value) {
   @return math.div(math.round($value * 1000), 1000);
 }
+
+// @function fluid($raw, $min: 0.8, $fluid: 0.3) {
+//   @return clamp(#{$raw * $min}rem, #{$fluid}vw + #{$raw * 0.2}rem, #{$raw}rem);
+// }
+
+@function fluid($raw, $min: 0.8, $fluid: 1) {
+  $min: r($raw * $min);
+  $max: r($raw);
+
+  $min-rem: #{$min}rem;
+  $max-rem: #{$max}rem;
+
+  $base: r($min * 0.3);
+
+  @return clamp(#{$min-rem}, #{$fluid}vw + #{$base}rem, #{$max-rem});
+}
+
+@function offset() {
+}
