@@ -1,10 +1,19 @@
 @use "sass:math";
-$text: #f3f4f6;
-$hero: #151821;
-$background: #0d0f14;
-$surface: #171923;
-$text-muted: #9ca3af;
-$accent: #4ade80;
+
+:root {
+  --color-text: #f3f4f6;
+  --color-hero: #151821;
+  --color-background: #0d0f14;
+  --color-surface: #171923;
+  --color-text-muted: #9ca3af;
+  --color-accent: #4ade80;
+}
+$text: var(--color-text);
+$hero: var(--color-hero);
+$background: var(--color-background);
+$surface: var(--color-surface);
+$text-muted: var(--color-text-muted);
+$accent: var(--color-accent);
 
 $font-body: "Inter", sans-serif;
 $font-heading: "Space Grotesk", sans-serif;

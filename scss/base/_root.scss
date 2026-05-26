@@ -1,6 +1,7 @@
 @use "../abstract/index" as *;
 
 :root {
+  --hero-fs: #{$hero-fs};
   --display1-fs: #{$display1-fs};
   --display2-fs: #{$display2-fs};
   --title1-fs: #{$title1-fs};

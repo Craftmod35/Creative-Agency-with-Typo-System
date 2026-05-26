@@ -13,28 +13,29 @@ h1,
 h2,
 h3 {
   font-family: $font-heading;
-  // line-height: 1.2;
-  margin-bottom: 1rem;
 }
 h1 {
-  font-size: clamp(4rem, 8vw, 7.2rem);
+  @include typo(display1);
+  margin-block-end: $l;
 }
 h2 {
-  font-size: clamp(3rem, 5vw, 5rem);
+  @include typo(display2);
+  margin-block-end: $m;
 }
 h3 {
-  font-size: clamp(2rem, 3vw, 3rem);
+  @include typo(title2);
+  margin-block-end: $s;
 }
 
 .hero__title {
-  font-size: clamp(4rem, 7vw, 9rem);
+  @include typo(hero);
   max-width: 10ch;
-  margin-bottom: 2rem;
+  margin-block-end: $xs;
 }
 
 p {
-  margin-bottom: 1rem;
-  font-size: clamp(1.6rem, 2vw, 1.9rem);
+  @include typo(body);
+  margin-block-end: $xs;
 }
 
 section {

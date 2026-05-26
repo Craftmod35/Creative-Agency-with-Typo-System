@@ -30,6 +30,7 @@ $size-xl: r($raw-size-xl);
 $size-2xl: r($raw-size-2xl);
 
 // Typography Scales
+$raw-hero-fs: math.pow($step, 4);
 $raw-display1-fs: math.pow($step, 3);
 $raw-display2-fs: math.pow($step, 2);
 $raw-title1-fs: $step * $h-step;
@@ -43,6 +44,7 @@ $raw-label-fs: math.div(math.div(1, $q-step), $e-step);
 $raw-caption-fs: math.div(1, $h-step);
 $raw-capline-fs: math.div(1, $h-step);
 
+$hero-fs: fluid($raw-hero-fs, 0.55, 6);
 $display1-fs: fluid($raw-display1-fs, 0.7, 4);
 $display2-fs: fluid($raw-display2-fs, 0.75, 3);
 $title1-fs: fluid($raw-title1-fs, 0.8, 2);
@@ -70,6 +72,7 @@ $capline-fs: fluid($raw-capline-fs, 1, 0.1);
 // $capline-fs: r($raw-capline-fs) * 1rem;
 
 // Line Heights
+$hero-lh: 1.02;
 $display1-lh: 1.05;
 $display2-lh: 1.1;
 $title1-lh: 1.15;
@@ -84,6 +87,7 @@ $caption-lh: 1.4;
 $capline-lh: 1.4;
 
 // Letter Spacing
+$hero-ls: -0.035em;
 $display1-ls: -0.022em;
 $display2-ls: -0.022em;
 $title1-ls: -0.022em;
@@ -98,6 +102,7 @@ $caption-ls: -0.007em;
 $capline-ls: 0.0618em;
 
 // Weights
+$hero-w: 700;
 $display1-w: 400;
 $display2-w: 400;
 $title1-w: 400;
@@ -111,6 +116,7 @@ $label-w: 500;
 $caption-w: 400;
 $capline-w: 400;
 
+$hero-b: 800;
 $display1-b: 700;
 $display2-b: 700;
 $title1-b: 700;
@@ -123,3 +129,13 @@ $callout-b: 600;
 $label-b: 700;
 $caption-b: 600;
 $capline-b: 600;
+
+//Spacing
+
+$xxs: 0.25em;
+$xs: 0.5em;
+$s: 0.75em;
+$m: 1em;
+$l: 1.5em;
+$xl: 2em;
+$xxl: 3em;
