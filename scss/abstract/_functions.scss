@@ -21,5 +21,14 @@
   @return clamp(#{$min-rem}, #{$fluid}vw + #{$base}rem, #{$max-rem});
 }
 
-@function offset() {
+@function rem($value) {
+  @return #{$value}rem;
 }
+
+// @function text-color($color) {
+//   @if (color.channel($color, "lightness", $space: hsl) > 40%) {
+//     @return $dark-color;
+//   } @else {
+//     @return $white-color;
+//   }
+// }

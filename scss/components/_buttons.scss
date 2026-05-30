@@ -1,0 +1,153 @@
+@use "../abstract/index" as *;
+@use "sass:map" as *;
+@use "sass:math" as *;
+// @use "sass:color" as *;
+
+.icon {
+  width: $h-step * 1em;
+
+  flex-shrink: 0;
+
+  aspect-ratio: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100em;
+}
+
+.button .icon svg {
+  stroke: currentColor;
+  stroke-width: 2.5px;
+}
+
+.button {
+  --button-fs: var(--body-fs);
+  --button-lh: #{$h-step};
+  --q-step-dec: calc(#{$q-step} - 1);
+
+  --button-padX: var(--button-fs);
+  --button-padY: calc(var(--button-fs) * calc(#{$h-step} / #{$size-xl}));
+  --button-padX-sideWithIcon: calc(var(--button-fs) / #{$step});
+  --button-gap: calc(var(--button-padY) / #{$e-step});
+
+  // For icon buttons
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+  flex-shrink: 0;
+
+  white-space: nowrap;
+
+  line-height: var(--button-lh);
+  border-radius: 100em;
+  padding-top: var(--button-padY);
+  padding-right: var(--button-padY);
+  padding-bottom: var(--button-padY);
+  padding-left: var(--button-padY);
+
+  font-size: var(--button-fs);
+
+  cursor: pointer;
+}
+
+.button:has(.icon[icon-pos="left"]) {
+  padding-left: var(--button-padX-sideWithIcon);
+  padding-right: var(--button-padX);
+}
+.button:has(.icon[icon-pos="right"]) {
+  padding-left: 1em;
+  padding-right: var(--button-padX-sideWithIcon);
+}
+.button:has(.icon[icon-pos="left"]):has(.icon[icon-pos="right"]) {
+  padding-left: var(--button-padX-sideWithIcon);
+  padding-right: var(--button-padX-sideWithIcon);
+}
+
+// .button:has(.icon[icon-pos="left"]) .icon,
+// .button:has(.icon[icon-pos="right"]) .icon {
+//   margin-top: calc(-1 * calc(1em * var(--q-step-dec)));
+// }
+
+.button[button-size="sm"] {
+  --button-fs: var(--callout-fs);
+  font-weight: 600;
+}
+.button[button-size="lg"] {
+  --button-fs: var(--title3-fs);
+  font-weight: 600;
+}
+.button[button-size="xlg"] {
+  --button-fs: var(--title1-fs);
+}
+
+.button[button-type="primary"] {
+  background: $accent;
+  color: $background;
+  border: 1px solid $accent;
+
+  &:hover {
+    background: transparent;
+    color: $accent;
+    transform: translateY(-2px);
+
+    svg {
+      animation: flyArrow 0.4s ease forwards;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+}
+
+.button[button-type="secondary"] {
+  background: transparent;
+  color: $text;
+  border: 1px solid $text-muted;
+
+  &:hover {
+    background: color-mix(in srgb, #{$accent} 10%, transparent);
+    color: $accent;
+    transform: translateY(-2px);
+    border-color: $accent;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+.button[button-type="ghost"] {
+  background: transparent;
+  color: $text-muted;
+  border: none;
+
+  &:hover {
+    color: $text;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+@keyframes flyArrow {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  49% {
+    transform: translate(100%, -100%); // يطير بره الكادر فوق يمين
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-100%, 100%); // يرجع مستخبي تحت شمال
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0); // يستقر في السنتر بنعومة
+    opacity: 1;
+  }
+}

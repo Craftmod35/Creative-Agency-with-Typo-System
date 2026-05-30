@@ -1,0 +1,48 @@
+@use "../abstract/index" as *;
+@use "sass:math";
+
+// .main-nav {
+//   // margin-block-start: $xs;
+// }
+
+.main-nav {
+  border-bottom: 1px solid $accent;
+}
+.logo {
+  @include typo(title1);
+  color: $text;
+}
+
+.nav--flex {
+  @include flex(space-between, center, row nowrap);
+}
+
+.nav__list {
+  @include flex(center, center, row nowrap);
+  gap: 1.2 * $xxl;
+
+  margin-inline-start: $s;
+
+  li {
+    margin-block-start: -1 * $xxs;
+  }
+}
+
+.nav__links {
+  @include typo(body);
+
+  border-bottom: 3px solid transparent;
+  transition: border 0.3s ease;
+  padding-block-end: $xxs;
+  // padding-block-start: $xxs;
+
+  line-height: $h-step;
+
+  &:hover {
+    border-bottom: 3px solid $accent;
+  }
+}
+
+// .nav__cta {
+//   // @include typo(label, bold);
+// }

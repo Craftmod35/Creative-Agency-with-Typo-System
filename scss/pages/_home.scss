@@ -1,0 +1,56 @@
+@use "../abstract/index" as *;
+@use "sass:math";
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) 1fr;
+}
+
+.hero__container {
+  padding-inline: $xxl;
+}
+
+.hero__shell {
+  background-color: $surface;
+  border-radius: math.div($raw-display2-fs, $hero-lh) * 1em;
+}
+
+.hero__content {
+  padding-inline: $display1-fs;
+  padding-block-end: $display2-fs;
+  padding-block-start: math.div($raw-display2-fs, $display2-lh) * 1em;
+}
+
+.hero__label {
+  @include typo(title3, bold);
+  margin-block-end: $xs;
+  // margin-block-start: calc(var(--hero-fs) * 1em / var(--hero-lh));
+
+  @media (min-width: 1812px) {
+    @include typo(title2, bold);
+  }
+}
+
+.hero__title {
+  @include typo(hero);
+  font-size: calc(var(--hero-fs) * var(--hero-scale, 1));
+
+  margin-block-end: $xs;
+  display: block;
+  word-break: keep-all;
+
+  @include respond-to(laptop-l) {
+    & > span {
+      white-space: nowrap;
+    }
+  }
+}
+
+.hero__p {
+  @include typo(title2);
+  margin-block-end: $xxl * 1.1;
+
+  @media (min-width: 1812px) {
+    @include typo(title1);
+  }
+}

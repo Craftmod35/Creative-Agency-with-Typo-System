@@ -16,7 +16,76 @@
       rel="stylesheet"
     />
 
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav class="main-nav pt-s pb-s">
+        <div class="container nav--flex">
+          <span class="logo">&#10033;</span>
+          <ul class="nav__list">
+            <li><a class="nav__links" href="">Home</a></li>
+            <li><a class="nav__links" href="">Work</a></li>
+            <li><a class="nav__links" href="">Services</a></li>
+            <li><a class="nav__links" href="">Contact</a></li>
+          </ul>
+          <a
+            href=""
+            class="nav__cta button"
+            button-type="primary"
+            button-size="sm"
+          >
+            <span>Start Project</span>
+            <i class="icon" icon-pos="right" data-lucide="arrow-up-right"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero pt-xl pb-xxl">
+      <div class="hero__container">
+        <div class="hero__shell hero__grid">
+          <div class="hero__content">
+            <h4 class="hero__label">creative developer</h4>
+            <h1 class="hero__title">
+              <span>Building Modern</span>
+              <span> Digital Experiences</span>
+              <span> That Perform</span>
+            </h1>
+            <p class="hero__p">
+              I design and build fast, clean and scalable front-end interfaces
+              focused on clarity and usability.
+            </p>
+
+            <a
+              href=""
+              class="button mr-m"
+              button-type="primary"
+              button-size="lg"
+              ><span>View Projects</span>
+              <i class="fa-solid fa-arrow-right icon" icon-pos="right"></i
+            ></a>
+            <a href="" class="button" button-type="secondary" button-size="lg"
+              ><span>Contact Me</span>
+              <i class="fa-solid fa-arrow-trend-up icon" icon-pos="right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
 </html>

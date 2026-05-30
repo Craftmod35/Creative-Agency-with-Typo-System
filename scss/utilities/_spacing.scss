@@ -20,22 +20,22 @@
   margin-inline: auto;
 }
 
-// @each $size, $value in $scales {
-//   @each $abbre, $dire in $directions {
-//     @if $dire == "" {
-//       .p-#{$size} {
-//         padding: $value * 1em ;
-//       }
-//       .m-#{$size} {
-//         margin: $value * 1em ;
-//       }
-//     } @else {
-//       .p#{$abbre}-#{$size} {
-//         padding-#{$dire}: $value * 1em ;
-//       }
-//       .m#{$abbre}-#{$size} {
-//         margin-#{$dire}: $value * 1em ;
-//       }
-//     }
-//   }
-// }
+@each $size, $value in $scales {
+  @each $abbre, $dire in $directions {
+    @if $dire == "" {
+      .p-#{$size} {
+        padding: $value * 1em;
+      }
+      .m-#{$size} {
+        margin: $value * 1em;
+      }
+    } @else {
+      .p#{$abbre}-#{$size} {
+        padding-#{$dire}: $value * 1em;
+      }
+      .m#{$abbre}-#{$size} {
+        margin-#{$dire}: $value * 1em;
+      }
+    }
+  }
+}

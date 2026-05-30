@@ -1,4 +1,5 @@
 @use "../abstract/index" as *;
+@use "sass:math";
 
 :root {
   --hero-fs: #{$hero-fs};
@@ -14,4 +15,10 @@
   --label-fs: #{$label-fs};
   --caption-fs: #{$caption-fs};
   --capline-fs: #{$capline-fs};
+}
+
+@media (min-width: 1812px) {
+  :root {
+    --hero-scale: 1.3;
+  }
 }

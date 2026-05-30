@@ -27,12 +27,6 @@ h3 {
   margin-block-end: $s;
 }
 
-.hero__title {
-  @include typo(hero);
-  max-width: 10ch;
-  margin-block-end: $xs;
-}
-
 p {
   @include typo(body);
   margin-block-end: $xs;
@@ -40,6 +34,17 @@ p {
 
 section {
   padding-block: 4rem;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $text;
+  font-family: $font-heading;
+}
+
+ul {
+  list-style: none;
 }
 
 // @each $type, $size in $typo {
