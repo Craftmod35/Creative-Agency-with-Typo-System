@@ -1,0 +1,110 @@
+@use "../../abstract/index" as *;
+@use "sass:math";
+
+.services {
+  background: linear-gradient(
+    180deg,
+    rgba(74, 222, 128, 0) 0%,
+    rgba(74, 222, 128, 0.03) 15%,
+    rgba(74, 222, 128, 0.06) 35%,
+    rgba(74, 222, 128, 0.03) 65%,
+    transparent 100%
+  );
+  padding-block: $xxl;
+
+  position: relative;
+}
+
+// .services::before {
+//   content: "";
+//   position: absolute;
+//   // inset: 0 0 auto 0;
+//   top: 0;
+//   left: 15%;
+//   width: 70%;
+//   height: 1px;
+//   background: linear-gradient(
+//     90deg,
+//     transparent,
+//     rgba(74, 222, 128, 0.4),
+//     transparent
+//   );
+// }
+
+.services__label {
+  @include typo(label);
+  margin-block-end: $xxs;
+  color: $accent;
+  opacity: 0.75;
+}
+
+.services__title {
+  @include typo(display2, bold);
+}
+
+.services__cards {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(15rem, 1fr));
+
+  gap: $xl;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, minmax(15rem, 1fr));
+  }
+  @include respond-to(laptop) {
+    grid-template-columns: repeat(3, minmax(15rem, 1fr));
+  }
+}
+
+.services__card:last-child {
+  grid-column: 1/ -1;
+
+  @include respond-to(laptop) {
+    grid-column: auto;
+    justify-self: auto;
+  }
+}
+
+.services__card {
+  background: $surface;
+  border: 1px solid color-mix(in srgb, $text-muted 15%, transparent);
+  border-radius: $l;
+  // padding-block-start: math.div($raw-title1-fs, $title1-lh) * 0.6em;
+  padding-block-start: $l * 0.9;
+  padding-block-end: $l;
+  padding-inline: $l;
+
+  width: 100%;
+  max-width: 24rem;
+  justify-self: center;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($accent, 0.4);
+  }
+
+  @include respond-to(tablet) {
+    max-width: 28rem;
+  }
+}
+
+.services__card__icon {
+  margin-block-end: $s;
+  font-size: $title1-fs;
+  color: $accent;
+  @include flex(center, center);
+}
+.services__card__title {
+  @include typo(title3, bold);
+  margin-block-end: $xs;
+}
+
+.services__card__text {
+  @include typo(body);
+  opacity: 0.75;
+  line-height: 1.5;
+}

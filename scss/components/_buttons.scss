@@ -49,6 +49,12 @@
   font-size: var(--button-fs);
 
   cursor: pointer;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .button:has(.icon[icon-pos="left"]) {
@@ -71,11 +77,12 @@
 
 .button[button-size="sm"] {
   --button-fs: var(--callout-fs);
-  font-weight: 600;
+  font-weight: 500;
 }
 .button[button-size="lg"] {
   --button-fs: var(--title3-fs);
   font-weight: 600;
+  letter-spacing: 0.02em;
 }
 .button[button-size="xlg"] {
   --button-fs: var(--title1-fs);

@@ -19,6 +19,14 @@
     flex-flow: $flow;
   }
 }
+@mixin inline-flex($justify: center, $align: center, $flow: null) {
+  display: inline-flex;
+  justify-content: $justify;
+  align-items: $align;
+  @if $flow !=null {
+    flex-flow: $flow;
+  }
+}
 
 @mixin typo($name, $variant: regular) {
   @if not map.has-key($typo, $name) {

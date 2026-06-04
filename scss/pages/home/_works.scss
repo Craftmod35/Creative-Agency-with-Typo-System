@@ -1,0 +1,93 @@
+@use "../../abstract/index" as *;
+
+.fr__intro {
+  .fr__label {
+    @include typo(label);
+    opacity: 0.7;
+    margin-block-end: $xs;
+  }
+
+  .fr__header {
+    @include typo(display2);
+    margin-block-end: $s;
+  }
+
+  .fr__p {
+    @include typo(title3);
+    font-weight: 600;
+    opacity: 0.75;
+    max-width: 60ch;
+  }
+
+  margin-block-end: $x2xl;
+}
+
+.fr__projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.fr__card {
+  background: $surface;
+  border-radius: $xl;
+}
+
+.fr__card--large {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+}
+
+.large__img__wrapper {
+  padding: $m;
+  overflow: hidden;
+
+  .large__img {
+    aspect-ratio: 16/9;
+    border-radius: $m;
+  }
+}
+
+.large__text__wrapper {
+  padding-block-start: $l;
+  padding-inline-end: $l;
+  padding-block-end: $l;
+
+  .large__label {
+    @include typo(label);
+  }
+  .large__heading {
+    @include typo(title2);
+  }
+  .large__p {
+    @include typo(callout);
+    opacity: 0.75;
+    line-height: 1.6;
+  }
+}
+
+.fr__card--small {
+  .small__img__wrapper {
+    padding: $m;
+
+    .small__img {
+      border-radius: $s;
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  .small__text__wrapper {
+    padding: $l;
+    padding-block-start: 0;
+
+    .small__label {
+      @include typo(caption);
+    }
+    .small__heading {
+      @include typo(title3);
+      font-weight: 500;
+    }
+  }
+}

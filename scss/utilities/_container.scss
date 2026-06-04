@@ -1,7 +1,7 @@
 @use "../abstract/index" as *;
 .container {
   width: 95%;
-  max-width: 1400px;
+  max-width: 1500px;
   margin-inline: auto;
 
   @include respond-to(tablet) {
@@ -12,6 +12,6 @@
   }
   @include respond-to(laptop-l) {
     width: 80%;
-    max-width: 1500px;
+    max-width: 1550px;
   }
 }

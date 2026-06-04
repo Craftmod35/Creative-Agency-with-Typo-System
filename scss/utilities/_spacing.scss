@@ -24,17 +24,17 @@
   @each $abbre, $dire in $directions {
     @if $dire == "" {
       .p-#{$size} {
-        padding: $value * 1em;
+        padding: $value * 1rem;
       }
       .m-#{$size} {
-        margin: $value * 1em;
+        margin: $value * 1rem;
       }
     } @else {
       .p#{$abbre}-#{$size} {
-        padding-#{$dire}: $value * 1em;
+        padding-#{$dire}: $value * 1rem;
       }
       .m#{$abbre}-#{$size} {
-        margin-#{$dire}: $value * 1em;
+        margin-#{$dire}: $value * 1rem;
       }
     }
   }

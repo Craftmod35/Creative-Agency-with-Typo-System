@@ -31,7 +31,7 @@
   <body>
     <header>
       <nav class="main-nav pt-s pb-s">
-        <div class="container nav--flex">
+        <div class="container nav--flex nav--centered">
           <span class="logo">&#10033;</span>
           <ul class="nav__list">
             <li><a class="nav__links" href="">Home</a></li>
@@ -52,7 +52,7 @@
       </nav>
     </header>
 
-    <section class="hero pt-xl pb-xxl">
+    <section class="hero pt-2xl pb-2xl">
       <div class="hero__container">
         <div class="hero__shell hero__grid">
           <div class="hero__content">
@@ -80,6 +80,114 @@
               <i class="fa-solid fa-arrow-trend-up icon" icon-pos="right"></i
             ></a>
           </div>
+          <div class="hero__media p-l">
+            <div class="hero__card hero__card--tall">
+              <video class="hero__video" autoplay muted loop playsinline>
+                <source src="./imgs/video111.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="hero__card hero__card--regular">
+              <img src="./imgs/lessismore.webp" alt="" />
+            </div>
+            <div class="hero__card hero__card--square">
+              <img src="./imgs/dashboard.webp" alt="" />
+            </div>
+            <div class="hero__card hero__card--regular">
+              <img src="./imgs/app.webp" alt="" />
+            </div>
+
+            <!-- <div class="hero__card">
+              <video autoplay muted loop playsinline>
+                <source src="./imgs/video2.mp4" type="video/mp4" />
+              </video>
+            </div> -->
+
+            <div class="hero__card hero__card--short">
+              <img src="./imgs/fashion.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services pt-2xl pb-2xl">
+      <div class="container">
+        <h4 class="services__label">SERVICES</h4>
+        <h2 class="services__title mb-2xl">What I Do</h2>
+        <div class="services__cards">
+          <div class="services__card">
+            <i class="fa-solid fa-code services__card__icon"></i>
+            <h4 class="services__card__title">Front-End Development</h4>
+            <p class="services__card__text">
+              Building fast, scalable and responsive interfaces with modern web
+              technologies.
+            </p>
+          </div>
+          <div class="services__card">
+            <i class="fa-solid fa-layer-group services__card__icon"></i>
+            <h4 class="services__card__title">UI Implementation</h4>
+            <p class="services__card__text">
+              Turning design concepts into clean, accessible and pixel-accurate
+              experiences.
+            </p>
+          </div>
+          <div class="services__card">
+            <i class="fa-solid fa-gauge-high services__card__icon"></i>
+            <h4 class="services__card__title">Performance Optimization</h4>
+            <p class="services__card__text">
+              Improving loading speed, responsiveness and overall user
+              experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-work pt-2xl pb-2xl">
+      <div class="container">
+        <div class="fr__intro">
+          <h4 class="fr__label">FEATURED WORK</h4>
+          <div class="fr__intro-top"></div>
+          <div class="fr__intro-main">
+            <h2 class="fr__header">Selected Projects</h2>
+            <p class="fr__p">
+              A curated selection of projects focused on performance, UI
+              clarity, and modern web experiences.
+            </p>
+          </div>
+        </div>
+        <div class="fr__projects">
+          <a href="" class="fr__card fr__card--large">
+            <div class="large__img__wrapper">
+              <img class="large__img" src="imgs/black-fashion.jpg" alt="" />
+            </div>
+            <div class="large__text__wrapper">
+              <span class="large__label">Fashion</span>
+              <h3 class="large__heading">Magnific</h3>
+              <p class="large__p">
+                Luxury e-commerce experience focused on visuall storytelling.
+              </p>
+            </div>
+          </a>
+          <a href="" class="fr__card fr__card--small">
+            <div class="small__img__wrapper">
+              <img class="small__img" src="imgs/color.jpg" alt="" />
+            </div>
+            <div class="small__text__wrapper">
+              <span class="small__label">Design System</span>
+              <h4 class="small__heading">Annual Color Identity</h4>
+            </div>
+          </a>
+
+          <a href="" class="fr__card fr__card--small">
+            <div class="small__img__wrapper">
+              <img class="small__img" src="imgs/coliving.jpg" alt="" />
+            </div>
+            <div class="small__text__wrapper">
+              <span class="small__label">Co-Living</span>
+              <h4 class="small__heading">Modern Co-Living Spaces</h4>
+            </div>
+          </a>
         </div>
       </div>
     </section>

@@ -44,7 +44,7 @@ $raw-label-fs: math.div(math.div(1, $q-step), $e-step);
 $raw-caption-fs: math.div(1, $h-step);
 $raw-capline-fs: math.div(1, $h-step);
 
-$hero-fs: fluid($raw-hero-fs, 0.65, 8);
+$hero-fs: fluid($raw-hero-fs, 0.75, 8);
 $display1-fs: fluid($raw-display1-fs, 0.7, 4);
 $display2-fs: fluid($raw-display2-fs, 0.75, 3);
 $title1-fs: fluid($raw-title1-fs, 0.8, 2);
@@ -97,7 +97,7 @@ $heading-ls: -0.014em;
 $subheading-ls: -0.007em;
 $body-ls: -0.011em;
 $callout-ls: -0.009em;
-$label-ls: -0.004em;
+$label-ls: 0.08em;
 $caption-ls: -0.007em;
 $capline-ls: 0.0618em;
 
