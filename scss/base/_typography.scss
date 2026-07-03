@@ -29,7 +29,7 @@ h3 {
 
 p {
   @include typo(body);
-  margin-block-end: $xs;
+  // margin-block-end: $xs;
 }
 
 a {

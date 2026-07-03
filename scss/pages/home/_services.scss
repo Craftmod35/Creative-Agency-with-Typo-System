@@ -10,7 +10,6 @@
     rgba(74, 222, 128, 0.03) 65%,
     transparent 100%
   );
-  padding-block: $xxl;
 
   position: relative;
 }
@@ -35,7 +34,7 @@
   @include typo(label);
   margin-block-end: $xxs;
   color: $accent;
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
 .services__title {

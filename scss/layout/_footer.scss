@@ -1,0 +1,61 @@
+@use "../abstract/index" as *;
+
+.footer {
+  border-top: 1px solid color-mix(in srgb, $text-muted 22%, transparent);
+  padding: $m * 1.2;
+}
+
+.footer__content {
+  @include flex($flow: column nowrap);
+  gap: $l;
+}
+
+.footer__logo {
+  font-size: 3.2rem;
+  // margin-block-end: $xs;
+  line-height: 1;
+}
+
+.footer__p {
+  font-size: clamp(1.25rem, 1vw, 1.75rem);
+  opacity: 0.85;
+  max-width: 40ch;
+  margin-inline: auto;
+
+  // margin-block-end: $l;
+}
+
+.footer__socials {
+  @include flex(center, center, row nowrap);
+  gap: $l;
+
+  padding-top: $l;
+  border-top: 1px solid color-mix(in srgb, $text-muted 15%, transparent);
+}
+
+.socials__link {
+  @include flex(center, center, column nowrap);
+  height: 4rem;
+  width: 3rem;
+}
+
+.socials__icon {
+  @include typo(title1);
+
+  letter-spacing: normal;
+  display: block;
+  text-align: center;
+  width: auto;
+
+  opacity: 0.75;
+
+  transition:
+    transform 0.2s,
+    color 0.2s;
+
+  &:hover {
+    color: $accent;
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}

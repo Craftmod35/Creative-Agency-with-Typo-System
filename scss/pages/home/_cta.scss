@@ -1,0 +1,32 @@
+@use "../../abstract/index" as *;
+@use "sass:math";
+
+.cta__intro {
+  max-width: 52rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.cta__label {
+  color: $accent;
+  @include typo(label);
+  margin-block-end: $xs;
+
+  opacity: 0.8;
+}
+
+.cta__heading {
+  @include typo(display2, bold);
+  margin-block-end: $s;
+}
+
+.cta__p {
+  @include typo(title3);
+  opacity: 0.8;
+  max-width: 42ch;
+  margin-inline: auto;
+}
+
+.cta__btn {
+  margin-block-start: $xl;
+}
