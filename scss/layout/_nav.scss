@@ -7,6 +7,11 @@
 
 .main-nav {
   border-bottom: 1px solid color-mix(in srgb, $text-muted 20%, transparent);
+  display: none;
+
+  @include respond-to(tablet) {
+    display: block;
+  }
 }
 .logo {
   color: $text;

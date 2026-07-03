@@ -39,6 +39,7 @@
 
 .services__title {
   @include typo(display2, bold);
+  margin-block-end: $x2xl;
 }
 
 .services__cards {
@@ -50,7 +51,7 @@
   @include respond-to(tablet) {
     grid-template-columns: repeat(2, minmax(15rem, 1fr));
   }
-  @include respond-to(laptop) {
+  @include respond-to(laptop-l) {
     grid-template-columns: repeat(3, minmax(15rem, 1fr));
   }
 }
@@ -58,7 +59,7 @@
 .services__card:last-child {
   grid-column: 1/ -1;
 
-  @include respond-to(laptop) {
+  @include respond-to(laptop-l) {
     grid-column: auto;
     justify-self: auto;
   }

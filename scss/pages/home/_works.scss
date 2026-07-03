@@ -55,8 +55,16 @@
 .fr__card--large {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+
+  padding: $xs;
+
+  @include respond-to(laptop-l) {
+    grid-template-columns: 1.2fr 1fr;
+    padding: 0;
+    gap: 1.5rem;
+  }
 }
 
 .large__img__wrapper {
@@ -73,9 +81,15 @@
 }
 
 .large__text__wrapper {
-  padding-block-start: $l;
+  padding-block-start: 0;
   padding-inline-end: $l;
+  padding-inline-start: $l;
   padding-block-end: $l;
+
+  @include respond-to(laptop-l) {
+    padding-inline-start: 0;
+    padding-block-start: $l;
+  }
 
   .large__label {
     @include typo(label);
