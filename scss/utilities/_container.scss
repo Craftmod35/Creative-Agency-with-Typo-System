@@ -5,7 +5,7 @@
   margin-inline: auto;
 
   @include respond-to(tablet) {
-    width: 90%;
+    width: 85%;
   }
   @include respond-to(laptop) {
     width: 85%;

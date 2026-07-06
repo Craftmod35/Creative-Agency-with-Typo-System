@@ -22,24 +22,30 @@
 
 .hero__container {
   margin-inline: auto;
-  width: clamp(300px, 80%, 1600px);
+  width: clamp(265px, 80%, 1600px);
 }
 
 .hero__shell {
-  background-color: $surface;
+  background-color: transparent;
   border-radius: math.div($raw-display2-fs, $hero-lh) * 1em;
-  // height: 65svh;
 
-  @media (min-width: 1812px) {
-    // height: 80svh;
+  @include respond-to(tablet) {
+    background-color: $surface;
   }
 }
 
 .hero__content {
-  padding-inline: clamp(2.8rem, 3vw + 0.5rem, 3.1rem);
-  padding-block-end: clamp(2.5rem, 3vw + 0.5rem, 2.8rem);
-  padding-block-start: math.div($raw-title1-fs, $title1-lh) * 0.9em;
+  // padding-inline: clamp(2rem, 3vw + 0.5rem, 2.5rem);
+  // // padding-block-end: clamp(2.5rem, 3vw + 0.5rem, 2.8rem);
+  // padding-block-start: math.div($raw-title1-fs, $title1-lh) * 0.9em;
 
+  // width: 90%;
+
+  @include respond-to(tablet) {
+    padding-inline: clamp(2.8rem, 3vw + 0.5rem, 3.1rem);
+    padding-block-end: clamp(2.5rem, 3vw + 0.5rem, 2.8rem);
+    padding-block-start: math.div($raw-title1-fs, $title1-lh) * 0.9em;
+  }
   @include respond-to(laptop) {
     padding-inline: clamp(3rem, 3vw + 0.5rem, 3.3rem);
     padding-block-end: clamp(2.5rem, 3vw + 0.5rem, 2.8rem);
@@ -59,13 +65,24 @@
 
   .button {
     margin-inline-end: $m;
+
+    &[button-type="secondary"] {
+      display: none;
+    }
   }
 }
 
 .hero__label {
-  @include typo(caption, bold);
-  margin-block-end: $xs;
+  font-size: 0.8rem;
+  line-height: 1;
+  font-weight: 500;
+  margin-block-end: 0.5em;
+  opacity: 0.7;
 
+  @include respond-to(tablet) {
+    @include typo(caption, bold);
+    margin-block-end: $xs;
+  }
   @include respond-to(laptop) {
     @include typo(body, bold);
     margin-block-end: $xs;
@@ -87,31 +104,50 @@
 }
 
 .hero__title {
-  @include typo(display1, bold);
+  @include typo(display2, bold);
 
-  margin-block-end: $xxs;
+  margin-block-end: 1em;
   display: block;
   word-break: keep-all;
+  // max-width: 14ch;
+
+  span {
+    white-space: nowrap;
+  }
+
+  @include respond-to(tablet) {
+    @include typo(display1, bold);
+
+    margin-block-end: $xxs;
+  }
 
   @include respond-to(laptop-l) {
     font-size: calc(var(--hero-fs) * var(--hero-scale, 1));
     @include typo(hero);
 
-    & > span {
-      white-space: nowrap;
-    }
+    // & > span {
+    //   white-space: nowrap;
+    // }
   }
 }
 
 .hero__p {
-  @include typo(title2);
+  @include typo(body);
   margin-block-end: $xl;
   font-weight: 400;
   line-height: 1.5;
   opacity: 0.85;
 
-  max-width: 40ch;
+  max-width: 34ch;
 
+  @include respond-to(tablet) {
+    @include typo(title2);
+    font-weight: 400;
+    line-height: 1.5;
+    opacity: 0.85;
+
+    max-width: 40ch;
+  }
   @include respond-to(laptop) {
     max-width: 38ch;
   }
@@ -121,10 +157,13 @@
 }
 
 .hero__media {
-  @include flex(center, center, column nowrap);
+  display: none;
+  @include respond-to(tablet) {
+    @include flex(center, center, column nowrap);
 
-  row-gap: 1.8rem;
-  column-gap: 1.5rem;
+    row-gap: 1.8rem;
+    column-gap: 1.5rem;
+  }
 
   @include respond-to(laptop-l) {
     row-gap: 1.5rem;
@@ -148,6 +187,13 @@
   @media (min-width: 1600px) {
     padding-block: 2.5rem;
     padding-inline-end: $m;
+  }
+
+  .hero__card:last-child {
+    display: none;
+    @include respond-to(laptop) {
+      display: block;
+    }
   }
 }
 

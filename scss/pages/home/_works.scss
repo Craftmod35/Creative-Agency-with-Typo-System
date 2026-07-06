@@ -25,13 +25,17 @@
 
 .fr__projects {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
+
+  @include respond-to(laptop-l) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .fr__card {
   background: $surface;
-  border-radius: $xl;
+  border-radius: $l;
 
   transition:
     transform 0.25s ease,
@@ -46,6 +50,10 @@
       opacity: 1;
     }
   }
+
+  @include respond-to(tablet) {
+    border-radius: $xl;
+  }
 }
 
 .fr__card:hover .large__cta i {
@@ -58,7 +66,11 @@
   gap: 1rem;
   grid-template-columns: 1fr;
 
-  padding: $xs;
+  // padding: 0.2rem;
+
+  @include respond-to(tablet) {
+    padding: $xs;
+  }
 
   @include respond-to(laptop-l) {
     grid-template-columns: 1.2fr 1fr;
@@ -68,8 +80,8 @@
 }
 
 .large__img__wrapper {
-  padding: $m;
   overflow: hidden;
+  padding: $xs;
 
   .large__img {
     aspect-ratio: 16/9;
@@ -77,6 +89,10 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @include respond-to(laptop-l) {
+    padding: $m;
   }
 }
 
@@ -122,20 +138,24 @@
   transform: translateY(2px);
 }
 
-.fr__card--small {
-  .small__img__wrapper {
+.small__img__wrapper {
+  padding: $xs;
+
+  @include respond-to(tablet) {
     padding: $m;
-
-    .small__img {
-      border-radius: $s;
-      aspect-ratio: 16 / 9;
-
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
+  .small__img {
+    border-radius: $s;
+    aspect-ratio: 16 / 9;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.fr__card--small {
   .small__text__wrapper {
     padding: $l;
     padding-block-start: 0;

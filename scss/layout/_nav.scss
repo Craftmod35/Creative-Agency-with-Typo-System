@@ -7,11 +7,6 @@
 
 .main-nav {
   border-bottom: 1px solid color-mix(in srgb, $text-muted 20%, transparent);
-  display: none;
-
-  @include respond-to(tablet) {
-    display: block;
-  }
 }
 .logo {
   color: $text;
@@ -24,15 +19,27 @@
 .nav--flex {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-flow: row nowrap;
+
+  & > .button {
+    display: none;
+    @include respond-to(tablet) {
+      display: inline-flex;
+    }
+  }
 }
 
 .nav__list {
-  @include flex(center, center, row nowrap);
-  gap: $l;
+  display: none;
 
-  li {
-    display: flex;
+  @include respond-to(tablet) {
+    @include flex(center, center, row nowrap);
+    gap: $l;
+
+    li {
+      display: flex;
+    }
   }
 }
 .nav--centered {
@@ -92,4 +99,57 @@
 
 // .nav__cta {
 //   // @include typo(label, bold);
+// }
+
+// nav__hamburger
+
+.nav__hamburger {
+  @include flex(center, center, column nowrap);
+  gap: 5px;
+
+  width: 2rem;
+  height: 2rem;
+
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+
+  @include respond-to(tablet) {
+    display: none;
+  }
+}
+
+.nav__hamburger span {
+  width: 1.55rem;
+  height: 2px;
+  background: $text;
+  display: block;
+  border-radius: 1px;
+  opacity: 0.8;
+
+  transition: 0.25s ease;
+  transform-origin: center;
+}
+
+.nav__hamburger.is-active span:nth-child(1) {
+  transform: translate(7px) rotate(45deg);
+}
+.nav__hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.nav__hamburger.is-active span:nth-child(3) {
+  transform: translate(-7px) rotate(-45deg);
+}
+
+// Testing
+// .nav__hamburger:hover span:nth-child(1) {
+//   transform: translateY(7px) rotate(45deg);
+// }
+// .nav__hamburger:hover span:nth-child(2) {
+//   opacity: 0;
+// }
+// .nav__hamburger:hover span:nth-child(3) {
+//   transform: translateY(-7px) rotate(-45deg);
 // }

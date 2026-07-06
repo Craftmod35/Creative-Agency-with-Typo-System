@@ -2,7 +2,7 @@
 
 .footer {
   border-top: 1px solid color-mix(in srgb, $text-muted 22%, transparent);
-  padding: $m * 1.2;
+  padding: clamp(0.5rem, 2vw, 1.2rem);
 }
 
 .footer__content {
@@ -27,9 +27,9 @@
 
 .footer__socials {
   @include flex(center, center, row nowrap);
-  gap: $l;
+  gap: clamp(1rem, 4vw, 1.5rem);
 
-  padding-top: $l;
+  padding-top: clamp(1rem, 2vw, 1.5rem);
   border-top: 2px solid color-mix(in srgb, $text-muted 15%, transparent);
 }
 

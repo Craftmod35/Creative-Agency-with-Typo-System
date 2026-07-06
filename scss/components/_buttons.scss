@@ -69,7 +69,20 @@
   padding-left: var(--button-padX-sideWithIcon);
   padding-right: var(--button-padX-sideWithIcon);
 }
-
+.button[icon-mobile="hidden"] {
+  @media (max-width: 425px) {
+    padding-inline: var(--button-padX) !important;
+    .icon {
+      display: none !important;
+    }
+  }
+}
+.button[width-phone="full"] {
+  @media (max-width: 426px) {
+    width: 100%;
+    max-width: 300px;
+  }
+}
 // .button:has(.icon[icon-pos="left"]) .icon,
 // .button:has(.icon[icon-pos="right"]) .icon {
 //   margin-top: calc(-1 * calc(1em * var(--q-step-dec)));
@@ -79,7 +92,12 @@
   --button-fs: var(--callout-fs);
   font-weight: 500;
 }
-.button[button-size="lg"] {
+// .button[button-size="lg"] {
+//   --button-fs: var(--title3-fs);
+//   font-weight: 600;
+//   letter-spacing: 0.02em;
+// }
+.button[button-size-phone="lg"] {
   --button-fs: var(--title3-fs);
   font-weight: 600;
   letter-spacing: 0.02em;

@@ -19,38 +19,54 @@
 .process__p {
   @include typo(title3);
   max-width: 60ch;
-  opacity: 0.75;
+  // opacity: 0.75;
 }
 
 .process__step {
-  padding-block: $xl;
+  // @include flex(flex-start, flex-start, row nowrap);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
 
-  @include flex(flex-start, center, row nowrap);
+  padding-block: $xl;
 }
 
 .process__content {
   border-left: 1px solid color-mix(in srgb, $text-muted 20%, transparent);
-  padding: $l;
-  display: inline-block;
+  padding-inline-start: clamp(1.45rem, 5vw, 2rem);
+
+  @include respond-to(tablet) {
+    padding-inline-start: $l;
+  }
 }
 
 .process__number {
   @include typo(display1);
-  opacity: 0.3;
+  opacity: 0.5;
   color: $text;
   display: inline-block;
-  width: 3rem;
-  height: 5rem;
-  margin-inline-end: $xs;
-  text-align: center;
+  width: auto;
+  flex: 0 0 2.2rem;
+  line-height: 1;
+  text-align: left;
+  margin-inline-end: clamp(0.4rem, 0.4vw, 0.6rem);
+
+  @include respond-to(tablet) {
+    margin-inline-end: $xs;
+  }
 }
 
 .process__content > h3 {
-  display: inline;
+  display: block;
   @include typo(title1, bold);
+  margin-bottom: $xs;
 }
 
 .process__content > p {
-  @include typo(heading);
-  opacity: 0.75;
+  @include typo(callout);
+  opacity: 0.7;
+
+  @include respond-to(tablet) {
+    @include typo(title3);
+  }
 }
