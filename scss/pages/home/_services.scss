@@ -31,15 +31,23 @@
 // }
 
 .services__label {
-  @include typo(label);
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
   margin-block-end: $xxs;
   color: $accent;
   opacity: 0.8;
+
+  @include respond-to(tablet) {
+    @include typo(label);
+  }
 }
 
 .services__title {
   @include typo(display2, bold);
-  margin-block-end: $x2xl;
+  margin-block-end: clamp(1.8em, 2vw, 2.1em);
+
+  @include respond-to(tablet) {
+    margin-block-end: $xxl;
+  }
 }
 
 .services__cards {
@@ -70,9 +78,15 @@
   border: 1px solid color-mix(in srgb, $text-muted 15%, transparent);
   border-radius: $l;
   // padding-block-start: math.div($raw-title1-fs, $title1-lh) * 0.6em;
-  padding-block-start: $l * 0.9;
-  padding-block-end: $l;
-  padding-inline: $l;
+  padding-block-start: clamp(2.2rem, 2vw, 2.5rem);
+  padding-block-end: clamp(2.2rem, 2vw, 2.5rem);
+  padding-inline: clamp(2.2rem, 2vw, 2.5rem);
+
+  @include respond-to(tablet) {
+    padding-block-start: $l * 0.9;
+    padding-block-end: $l;
+    padding-inline: $l;
+  }
 
   width: 100%;
   max-width: 24rem;

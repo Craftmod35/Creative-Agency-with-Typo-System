@@ -1,25 +1,41 @@
 @use "../../abstract/index" as *;
 
 .process__intro {
-  margin-block-end: $xxl;
+  margin-block-end: $l;
+
+  @include respond-to(tablet) {
+    margin-block-end: $xxl;
+  }
 }
 
 .process__label {
-  @include typo(label);
+  font-size: clamp(0.6rem, 2vw, 0.8rem);
   margin-block-end: $xs;
   color: $accent;
   opacity: 0.8;
+
+  @include respond-to(tablet) {
+    @include typo(label);
+  }
 }
 
 .process__heading {
-  @include typo(display2, bold);
+  @include typo(title1, bold);
   margin-block-end: $s;
+
+  @include respond-to(tablet) {
+    @include typo(display2, bold);
+  }
 }
 
 .process__p {
-  @include typo(title3);
+  font-size: clamp(0.8rem, 2vw, 1rem);
   max-width: 60ch;
   // opacity: 0.75;
+
+  @include respond-to(tablet) {
+    @include typo(title3);
+  }
 }
 
 .process__step {
@@ -28,7 +44,11 @@
   align-items: flex-start;
   gap: 0.75rem;
 
-  padding-block: $xl;
+  padding-block: $l;
+
+  @include respond-to(tablet) {
+    padding-block: $xl;
+  }
 }
 
 .process__content {

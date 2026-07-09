@@ -2,22 +2,33 @@
 
 .fr__intro {
   .fr__label {
-    @include typo(label);
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
     opacity: 0.8;
     margin-block-end: $xs;
     color: $accent;
+
+    @include respond-to(tablet) {
+      @include typo(label);
+    }
   }
 
   .fr__header {
-    @include typo(display2);
-    margin-block-end: $s;
+    @include typo(title1);
+    white-space: nowrap;
+    margin-block-end: clamp(0.5em, 2vw, 0.75em);
+    @include respond-to(tablet) {
+      @include typo(display2);
+    }
   }
 
   .fr__p {
-    @include typo(title3);
+    font-size: clamp(0.8rem, 2vw, 1rem);
     font-weight: 600;
     opacity: 0.75;
     max-width: 60ch;
+    @include respond-to(tablet) {
+      @include typo(title3);
+    }
   }
 
   margin-block-end: $x2xl;
@@ -26,9 +37,9 @@
 .fr__projects {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: clamp(2rem, 2vw, 2.2rem);
 
-  @include respond-to(laptop-l) {
+  @include respond-to(laptop) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -44,6 +55,7 @@
 
   &:hover {
     transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0 0 0 / 0.12);
 
     .large__cta {
       gap: 1rem;
@@ -63,7 +75,7 @@
 .fr__card--large {
   grid-column: 1 / -1;
   display: grid;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
   grid-template-columns: 1fr;
 
   // padding: 0.2rem;
@@ -72,7 +84,7 @@
     padding: $xs;
   }
 
-  @include respond-to(laptop-l) {
+  @include respond-to(laptop) {
     grid-template-columns: 1.2fr 1fr;
     padding: 0;
     gap: 1.5rem;
@@ -81,44 +93,57 @@
 
 .large__img__wrapper {
   overflow: hidden;
-  padding: $xs;
+  padding-inline: clamp(1rem, 2vw, 1.2rem);
+  padding-block-start: clamp(1rem, 2vw, 1.2rem);
 
   .large__img {
-    aspect-ratio: 16/9;
+    aspect-ratio: 8/5;
     border-radius: $m;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  @include respond-to(laptop-l) {
+  @include respond-to(laptop) {
     padding: $m;
   }
 }
 
 .large__text__wrapper {
   padding-block-start: 0;
-  padding-inline-end: $l;
-  padding-inline-start: $l;
-  padding-block-end: $l;
+  padding-inline: clamp(1.5rem, 2vw, 1.6rem);
+  padding-block-end: clamp(1.4rem, 2vw, 1.5rem);
 
-  @include respond-to(laptop-l) {
+  @include respond-to(laptop) {
     padding-inline-start: 0;
     padding-block-start: $l;
   }
 
   .large__label {
-    @include typo(label);
-    opacity: 0.9;
+    font-size: clamp(0.6rem, 2vw, 0.8rem);
+    opacity: 0.7;
+    @include respond-to(tablet) {
+      @include typo(label);
+      opacity: 0.9;
+    }
   }
   .large__heading {
-    @include typo(title1);
+    @include typo(title2);
+
+    @include respond-to(tablet) {
+      @include typo(title1);
+    }
   }
   .large__p {
-    @include typo(body);
-    opacity: 0.75;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    opacity: 0.65;
     line-height: 1.6;
     max-width: 50ch;
+
+    @include respond-to(tablet) {
+      @include typo(body);
+      opacity: 0.75;
+    }
   }
 
   .large__cta {
@@ -140,6 +165,7 @@
 
 .small__img__wrapper {
   padding: $xs;
+  padding-block-end: 0;
 
   @include respond-to(tablet) {
     padding: $m;
@@ -147,7 +173,7 @@
 
   .small__img {
     border-radius: $s;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3/2;
 
     width: 100%;
     height: 100%;
@@ -157,16 +183,42 @@
 
 .fr__card--small {
   .small__text__wrapper {
-    padding: $l;
+    padding-inline: clamp(1.1rem, 2vw, 1.2rem);
+    padding-block-end: clamp(1.3rem, 2vw, 1.4rem);
     padding-block-start: 0;
 
+    @include respond-to(tablet) {
+      padding: $l;
+      padding-block-start: 0;
+    }
+
     .small__label {
-      @include typo(label);
+      font-size: clamp(0.6rem, 2vw, 0.8rem);
       opacity: 0.85;
+
+      @include respond-to(tablet) {
+        @include typo(label);
+        margin-block-end: $xs;
+      }
     }
     .small__heading {
-      @include typo(title3, bold);
+      font-size: clamp(1.2rem, 2vw, 1.3rem);
       font-weight: 500;
+      margin-block-end: $xs;
+
+      @include respond-to(tablet) {
+        @include typo(title3);
+      }
+    }
+
+    .small__p {
+      font-size: clamp(0.7rem, 2vw, 1rem);
+      opacity: 0.7;
+      max-width: 36ch;
+
+      @include respond-to(tablet) {
+        @include typo(body);
+      }
     }
   }
 }
