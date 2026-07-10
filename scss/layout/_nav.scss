@@ -153,3 +153,105 @@
 // .nav__hamburger:hover span:nth-child(3) {
 //   transform: translateY(-7px) rotate(-45deg);
 // }
+
+// Aside Nav
+.nav__overlay {
+  //overlay
+  position: fixed;
+  inset: 0;
+
+  background: rgb(0 0 0 / 0.45);
+
+  // opacity: 1;
+  // visibility: visible;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.nav__drawer {
+  position: fixed;
+  z-index: 90;
+
+  top: 0;
+  right: 0;
+
+  width: min(80vw, 360px);
+  height: 100vh;
+
+  background: $surface;
+
+  z-index: 100;
+
+  padding: 2rem;
+
+  // transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  &.is-active {
+    transform: translateX(0);
+  }
+}
+
+.nav__drawer-header {
+  @include flex(space-between, center, row nowrap);
+
+  border-bottom: 2px solid color-mix(in srgb, $text-muted 40%, transparent);
+  padding-bottom: 1rem;
+
+  .nav__close {
+    @include flex(center, center, column nowrap);
+    gap: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    span {
+      width: 1.5rem;
+      height: 2.2px;
+      background: $text;
+      display: block;
+      border-radius: 1px;
+      opacity: 0.8;
+
+      transition: 0.25s ease;
+      transform-origin: center;
+    }
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+.nav__list--drawer {
+  @include flex(flex-start, flex-start, column nowrap);
+  gap: 1.5rem;
+  margin-block-start: 3rem;
+
+  .nav__links {
+    @include typo(title2);
+  }
+}
+
+.nav__drawer-footer {
+  margin-top: auto;
+}

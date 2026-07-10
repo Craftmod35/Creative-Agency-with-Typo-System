@@ -236,6 +236,98 @@ ul {
   transform: translate(-7px) rotate(-45deg);
 }
 
+.nav__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.nav__overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav__drawer {
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  right: 0;
+  width: min(80vw, 360px);
+  height: 100vh;
+  background: var(--color-surface);
+  z-index: 100;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.nav__drawer.is-active {
+  transform: translateX(0);
+}
+
+.nav__drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row nowrap;
+  border-bottom: 2px solid color-mix(in srgb, var(--color-text-muted) 40%, transparent);
+  padding-bottom: 1rem;
+}
+.nav__drawer-header .nav__close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 5px;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.nav__drawer-header .nav__close span {
+  width: 1.5rem;
+  height: 2.2px;
+  background: var(--color-text);
+  display: block;
+  border-radius: 1px;
+  opacity: 0.8;
+  transition: 0.25s ease;
+  transform-origin: center;
+}
+.nav__drawer-header .nav__close span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__drawer-header .nav__close span:nth-child(2) {
+  opacity: 0;
+}
+.nav__drawer-header .nav__close span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav__list--drawer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column nowrap;
+  gap: 1.5rem;
+  margin-block-start: 3rem;
+}
+.nav__list--drawer .nav__links {
+  font-size: var(--title2-fs);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+.nav__drawer-footer {
+  margin-top: auto;
+}
+
 .footer {
   border-top: 1px solid color-mix(in srgb, var(--color-text-muted) 22%, transparent);
   padding: clamp(0.5rem, 2vw, 1.2rem);
