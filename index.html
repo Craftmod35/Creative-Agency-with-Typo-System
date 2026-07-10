@@ -34,10 +34,10 @@
         <div class="container nav--flex nav--centered">
           <span class="logo">&#10033;</span>
           <ul class="nav__list">
-            <li><a class="nav__links" href="">Home</a></li>
-            <li><a class="nav__links" href="">Work</a></li>
-            <li><a class="nav__links" href="">Services</a></li>
-            <li><a class="nav__links" href="">Contact</a></li>
+            <li><a class="nav__links" href="#home">Home</a></li>
+            <li><a class="nav__links" href="#services">Services</a></li>
+            <li><a class="nav__links" href="#process">Process</a></li>
+            <li><a class="nav__links" href="#work">Work</a></li>
           </ul>
           <a
             href=""
@@ -49,7 +49,7 @@
             <i class="icon" icon-pos="right" data-lucide="arrow-up-right"></i>
           </a>
 
-          <button class="nav__hamburger">
+          <button class="nav__hamburger" aria-label="Open menu">
             <span></span>
             <span></span>
             <span></span>
@@ -62,17 +62,17 @@
       <aside class="nav__drawer">
         <div class="nav__drawer-header">
           <span class="logo">&#10033;</span>
-          <button class="nav__close nav__close--active">
+          <button class="nav__close nav__close--active" aria-label="Close menu">
             <span></span>
             <span></span>
             <span></span>
           </button>
         </div>
         <ul class="nav__list nav__list--drawer">
-          <li><a class="nav__links" href="">Home</a></li>
-          <li><a class="nav__links" href="">Work</a></li>
-          <li><a class="nav__links" href="">Services</a></li>
-          <li><a class="nav__links" href="">Contact</a></li>
+          <li><a class="nav__links" href="#home">Home</a></li>
+          <li><a class="nav__links" href="#services">Services</a></li>
+          <li><a class="nav__links" href="#process">Process</a></li>
+          <li><a class="nav__links" href="#work">Work</a></li>
         </ul>
 
         <div class="nav__drawer-footer">
@@ -106,7 +106,7 @@
       </aside>
     </header>
 
-    <section class="hero pt-3xl pb-4xl">
+    <section id="home" class="hero pt-3xl pb-4xl">
       <div class="hero__container">
         <div class="hero__shell hero__grid">
           <div class="hero__content">
@@ -149,7 +149,7 @@
       </div>
     </section>
 
-    <section class="services pt-4xl pb-4xl">
+    <section id="services" class="services pt-4xl pb-4xl">
       <div class="container">
         <h4 class="services__label">SERVICES</h4>
         <h2 class="services__title">What I Do</h2>
@@ -182,7 +182,7 @@
       </div>
     </section>
 
-    <section class="process pt-4xl pb-4xl">
+    <section id="process" class="process pt-4xl pb-4xl">
       <div class="container">
         <div class="process__intro">
           <h4 class="process__label">PROCESS</h4>
@@ -241,7 +241,7 @@
       </div>
     </section>
 
-    <section class="featured-work pt-4xl pb-4xl">
+    <section id="work" class="featured-work pt-4xl pb-4xl">
       <div class="container">
         <div class="fr__intro">
           <h4 class="fr__label">FEATURED WORK</h4>
@@ -367,7 +367,7 @@
       </div>
     </footer>
 
-    <script>
+    <script src="js/script.js">
       lucide.createIcons();
     </script>
   </body>
